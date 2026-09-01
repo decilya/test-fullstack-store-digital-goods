@@ -1,0 +1,9 @@
+.git
+.idea
+.vscode
+*.swp
+*.log
+node_modules
+vendor
+README.md
+*.md

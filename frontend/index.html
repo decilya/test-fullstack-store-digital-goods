@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerStore — Магазин цифровых товаров</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header__inner">
+        <button class="catalog-btn" id="catalogBtn" aria-label="Открыть каталог" aria-expanded="false">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <rect x="1" y="1" width="6" height="6" rx="1"/>
+                <rect x="9" y="1" width="6" height="6" rx="1"/>
+                <rect x="1" y="9" width="6" height="6" rx="1"/>
+                <rect x="9" y="9" width="6" height="6" rx="1"/>
+            </svg>
+            <span>Каталог</span>
+        </button>
+        
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Игра, приложение или услуга..." aria-label="Поиск">
+            <button class="search-btn" aria-label="Избранное">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </button>
+            <button class="search-btn search-btn--active" aria-label="Поиск">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="user-avatar" aria-label="Профиль">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+        </div>
+    </div>
+    
+    <div class="catalog-dropdown" id="catalogDropdown" role="menu" aria-labelledby="catalogBtn">
+        <div class="container catalog-dropdown__inner">
+            <div class="catalog-dropdown__col">
+                <h4>Игры и сервисы</h4>
+                <a href="#" role="menuitem">Игровые ценности</a>
+                <a href="#" role="menuitem">Мобильные игры</a>
+                <a href="#" role="menuitem">Подписки</a>
+            </div>
+            <div class="catalog-dropdown__col">
+                <h4>Steam ▸</h4>
+                <a href="#" role="menuitem">Игры и DLC</a>
+                <a href="#" role="menuitem">Пополнение баланса</a>
+                <a href="#" role="menuitem">Подарочные карты</a>
+            </div>
+            <div class="catalog-dropdown__col">
+                <h4>PlayStation ▸</h4>
+                <a href="#" role="menuitem">Игры и DLC</a>
+                <a href="#" role="menuitem">Пополнение баланса</a>
+                <a href="#" role="menuitem">PS Plus</a>
+            </div>
+            <div class="catalog-dropdown__col">
+                <h4>Xbox ▸</h4>
+                <a href="#" role="menuitem">Игры и DLC</a>
+                <a href="#" role="menuitem">Game Pass</a>
+                <a href="#" role="menuitem">Gold</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="main">
+    <div class="container">
+        
+        <section class="carousel" id="heroCarousel" aria-label="Промо-баннеры">
+            <div class="carousel__track">
+                <div class="carousel__slide carousel__slide--active" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+                    <div class="carousel__content">
+                        <h2>Скидки до 70% на топовые игры</h2>
+                        <p>Steam, PlayStation, Xbox — ключи по лучшим ценам</p>
+                    </div>
+                </div>
+                <div class="carousel__slide" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);">
+                    <div class="carousel__content">
+                        <h2>Пополнение Steam без комиссии</h2>
+                        <p>Моментальная доставка, гарантия возврата</p>
+                    </div>
+                </div>
+                <div class="carousel__slide" style="background: linear-gradient(135deg, #c31432 0%, #240b36 100%);">
+                    <div class="carousel__content">
+                        <h2>Discord Nitro со скидкой 40%</h2>
+                        <p>Подписка на 1 месяц по лучшей цене</p>
+                    </div>
+                </div>
+                <div class="carousel__slide" style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);">
+                    <div class="carousel__content">
+                        <h2>CS2 Prime Status — мгновенная выдача</h2>
+                        <p>Официальный ключ активации</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" id="prevSlide" aria-label="Предыдущий">‹</button>
+            <button class="carousel__btn carousel__btn--next" id="nextSlide" aria-label="Следующий">›</button>
+            <div class="carousel__dots" id="carouselDots" role="tablist"></div>
+        </section>
+        
+        <section class="services" aria-label="Сервисы">
+            <div class="services__scroll" id="servicesScroll">
+                <!-- Заполняется JS -->
+            </div>
+        </section>
+        
+        <section class="steam-topup">
+            <div class="steam-topup__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                    <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.824 1.482-1.367 2.546-1.367.18 0 .354.016.526.042l2.886-4.17L11.979 0zM23.96 14.784c0-1.068-.432-2.034-1.128-2.738l-4.17 2.886c.026.172.042.346.042.526 0 1.767-1.433 3.2-3.2 3.2-.696 0-1.34-.224-1.868-.604l-4.17 2.886c1.58 1.332 3.62 2.134 5.838 2.134 4.86 0 8.656-3.936 8.656-8.29zM15.5 15.5c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2z"/>
+                </svg>
+            </div>
+            <div class="steam-topup__content">
+                <div class="steam-topup__title">
+                    <h3>Пополнение Steam</h3>
+                    <span class="badge badge--green">5%</span>
+                </div>
+                <a href="#" class="promo-link">Ввести промокод</a>
+            </div>
+            <div class="steam-topup__login">
+                <span>Логин Steam</span>
+            </div>
+            <div class="steam-topup__amount">
+                <div>
+                    <div class="amount-label">Сумма</div>
+                    <div class="amount-value" id="amountValue">500₽</div>
+                </div>
+                <div class="currency-buttons" id="currencyButtons">
+                    <button class="currency-btn currency-btn--active" data-currency="USD">$</button>
+                    <button class="currency-btn" data-currency="KZT">₸</button>
+                    <button class="currency-btn" data-currency="RUB">₽</button>
+                </div>
+            </div>
+            <button class="pay-btn" id="topupPayBtn">Оплатить 500$</button>
+        </section>
+        
+        <section class="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Популярные товары</h2>
+                <div class="tabs" role="tablist">
+                    <button class="tab tab--active" data-category="all" role="tab">Все</button>
+                    <button class="tab" data-category="topup" role="tab">Донат</button>
+                    <button class="tab" data-category="subscription" role="tab">Подписки</button>
+                    <button class="tab" data-category="key" role="tab">Ключи</button>
+                    <button class="tab" data-category="giftcard" role="tab">Подарочные карты</button>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Заполняется JS -->
+            </div>
+        </section>
+        
+    </div>
+</main>
+
+<div class="modal" id="paymentModal" aria-hidden="true">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+        <button class="modal__close" id="modalClose" aria-label="Закрыть">×</button>
+        <h2 class="modal__title">Оплата заказа</h2>
+        <div class="modal__info">
+            <div class="modal__row">
+                <span>Заказ:</span>
+                <strong id="modalOrderId">—</strong>
+            </div>
+            <div class="modal__row">
+                <span>Товар:</span>
+                <strong id="modalProductName">—</strong>
+            </div>
+            <div class="modal__row">
+                <span>Сумма:</span>
+                <strong id="modalAmount">—</strong>
+            </div>
+        </div>
+        <div class="modal__promo">
+            <input type="text" class="modal__promo-input" id="promoInput" placeholder="Промокод" maxlength="50">
+            <button class="modal__promo-btn" id="applyPromoBtn">Применить</button>
+        </div>
+        <div class="modal__discount" id="discountBlock" style="display:none;">
+            <div class="modal__row">
+                <span>Скидка:</span>
+                <strong id="discountAmount" style="color: #4C9A2A;">—</strong>
+            </div>
+            <div class="modal__row">
+                <span>Итого:</span>
+                <strong id="finalAmount" style="font-size: 20px;">—</strong>
+            </div>
+        </div>
+        <div class="modal__actions">
+            <button class="btn btn--success" id="paySuccessBtn">Оплатить (успех)</button>
+            <button class="btn btn--danger" id="payFailBtn">Оплата не прошла</button>
+        </div>
+        <div class="modal__status" id="modalStatus"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__links">
+            <a href="#">Стать продавцом</a>
+            <a href="#">Бонусы</a>
+            <a href="#">Поддержка</a>
+            <a href="#">Гарантии</a>
+            <a href="#">Отзывы</a>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__socials">
+                <a href="#" class="social-link">VK</a>
+                <a href="#" class="social-link">TG</a>
+                <a href="#" class="social-link">TT</a>
+                <a href="#" class="social-link">YT</a>
+            </div>
+            <div class="footer__payments">
+                <span class="payment-icon">VISA</span>
+                <span class="payment-icon">МИР</span>
+                <span class="payment-icon">MC</span>
+            </div>
+        </div>
+        <div class="footer__legal">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Соглашение</a>
+            <a href="#">Договор-оферта</a>
+        </div>
+    </div>
+</footer>
+
+<div id="toastContainer" class="toast-container"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
